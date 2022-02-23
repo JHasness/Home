@@ -35,4 +35,34 @@
       init();
       animate;
       
-      
+      function init() {
+	      container = document.createElement( 'div' );
+	      document.body.appendChild( container );
+	      
+	      //camera
+	      camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 100000 );
+	      camera.position.z = 75;
+	      
+	      scene = new THREE.Scene();
+	      
+	      //lights
+	      var ambient = new THREE.AmbientLight( 0xffffff );
+	      scene.add( ambient );
+	      
+	      //more lights
+	      var directionalLight = new THREE.DirectionalLight( 0xffeedd );
+	      directionalLight.position.set( 0, -70, 100 ).normalize();
+	      scene.add( directionalLight );
+      }
+	    
+	    //Renderer
+	    webglRenderer = new THREE.JSONLoader();
+	    webglRenderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
+	    webglRenderer.domElement.style.position = "relative";
+	    container.appendChild( webglrenderer.domElement );
+	    
+	    //loader
+	    
+	    var loader = new THREE.JSONLoader(), callbackModel = function( geometry ) { createScene( geometry, 90, FLOOR, -50, 105 ) };
+	    loader.load({ model: "obj
+	      
