@@ -64,5 +64,28 @@
 	    //loader
 	    
 	    var loader = new THREE.JSONLoader(), callbackModel = function( geometry ) { createScene( geometry, 90, FLOOR, -50, 105 ) };
-	    loader.load({ model: "obj
+	    loader.load({ model: "obj/face/face.js", callback: callbackModel } );
+	    
+	    function createScene( geometry, x, y, z, b ) {
+		    zmesh = new THREE.mesh (geometry, new THREE.MeshFaceMaterial() );
+		    zmesh.position.set ( 0, 16, 0 );
+		    zmesh.scale.set ( 1, 1, 1 );
+		    scene.add( zmesh );
+	    }
+	    
+	    function onDocumentMouseMove(event) {
+		    mouseX = (event.clientX - windowHalfX );
+		    mouseY = (event.clientY - windowHalfY );
+	    }
+	    
+	    function animate() {
+		    requestAnimationFrame( animate );
+		    render();
+	    }
+	    
+	    function render() {
+		    zmesh.rotation.set(-mouseY/500+1, -mouseX/200, 0);
+		    webglRenderer.render( scene, camera );
+	    }
+		</script>
 	      
