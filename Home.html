@@ -15,20 +15,7 @@
     <script src="https://github.com/JHasness/three.js/build" onload="loaded=true;"></script>
     <!--<script src="js/Detector.js"></script>
     <script src="js/RequestAnimationFrame.js"></script>-->
-    		<script>
-			var el_up=document.getElementById("GFG_UP");
-			var el_down=document.getElementById("GFG_DOWN");
-			
-			el_up.innerHTML="Click on the button to check";
-			
-			function gfg_RUN() {
-				if(loaded) {
-					el_down.innerHTML="Loaded Successfully";
-				}
-				else {
-					el_down.innerHTML="Not Loaded";
-				}
-		</script>
+
     <script>
       //if (! Detector.webgl) Detector.addGetWebGlMessage();
       
@@ -111,9 +98,9 @@
 		   GFG_UP
 		</p>
 							
-		<button onclick = "gfg_RUN">
-		   Click Here
-		</button>
+		<script>
+			document.getElementById("GFG_UP").InnerHTML=loaded;
+		</script>
 					   
 		<p id="GFG_DOWN" style=
 		   "font-size: 23px" font-weight: bold; color: green;">
