@@ -4,6 +4,13 @@
 		<title>Hi I'm Jared</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		    <script>
+        var loaded = false;
+    </script>
+      
+    <script src="" 
+        onload="alert('Script loaded!'); loaded=true;" >
+    </script>
 	</head>
 
 
@@ -93,19 +100,15 @@
 	    }
 		</script>-->
 		
-		<p id="GFG_UP" style=
-		   "font-size: 15px" font-weight: bold;">
-		   GFG_UP
-		</p>
-							
-		<script>
-			document.getElementById("GFG_UP").InnerHTML=loaded;
-		</script>
-					   
-		<p id="GFG_DOWN" style=
-		   "font-size: 23px" font-weight: bold; color: green;">
-			GFG_DOWN
-		</p>
+    <script>
+        var el_up = document.getElementById("GFG_UP");
+        el_up.innerHTML = "Click on the refresh button "
+            + "to check whether script is loaded or not.";
+          
+        if(!loaded) {
+            alert("Script not loaded!");
+        }
+    </script> 
 
 	</body>
 </html>
