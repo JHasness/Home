@@ -10,6 +10,20 @@
 		<script>
 			var loaded=false;
 		</script>
+			<script>
+			var el_up=document.getElementById("GFG_UP");
+			var el_down=document.getElementById("GFG_DOWN");
+			
+			el_up.innerHTML="Click on the button to check";
+			
+			function gfg_RUN(){
+				if(loaded) {
+					el_down.innerHTML="Loaded Successfully";
+				}
+				else {
+					el_down.innerHTML="Not Loaded";
+				}
+		</script>	
 		<body>
     <script src="https://github.com/JHasness/three.js/build" onload="loaded=true;"></script>
     <!--<script src="js/Detector.js"></script>
@@ -105,21 +119,7 @@
 		   "font-size: 23px" font-weight: bold; color: green;">
 			GFG_DOWN
 		</p>
-		
-		<script>
-			var el_up=document.getElementById("GFG_UP");
-			var el_down=document.getElementById("GFG_DOWN");
-			
-			el_up.innerHTML="Click on the button to check";
-			
-			function gfg_RUN(){
-				if(loaded) {
-					el_down.innerHTML="Loaded Successfully";
-				}
-				else {
-					el_down.innerHTML="Not Loaded";
-				}
-		</script>			
+				
 	</body>
 </html>
 	      
